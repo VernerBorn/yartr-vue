@@ -37,7 +37,7 @@
       <span>ТМ</span>
     </router-link>
     <router-link
-      to="/trollebus"
+      to="/trolleybus"
       active-class="nav-app__button--active"
       tag="button"
       class="nav-app__button"
