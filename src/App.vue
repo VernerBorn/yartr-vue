@@ -1,22 +1,24 @@
 <template>
   <div id="app">
     <HeaderApp head="Траспорт Ярославля" />
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <main>
+      <div class="container">
+        <FormSearch />
+      </div>
+    </main>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HeaderApp from "@/components/HeaderApp.vue";
+import FormSearch from "@/components/FormSearch.vue";
 
 export default {
   name: "Home",
   components: {
-    HeaderApp
+    HeaderApp,
+    FormSearch
   }
 };
 </script>
@@ -38,7 +40,17 @@ export default {
   font-weight: bold;
 }
 body {
-  font-size: 18px;
+  padding: 0;
+  margin: 0;
+  background-color: #f9fbfd;
+  font-size: 16px;
   font-family: Neuron, sans-serif;
+  color: #161c2d;
+}
+.container {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 </style>
