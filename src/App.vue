@@ -5,13 +5,13 @@
       <div class="container">
         <FormSearch />
         <NavApp />
+        <router-view />
       </div>
     </main>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import HeaderApp from "@/components/HeaderApp.vue";
 import FormSearch from "@/components/FormSearch.vue";
 import NavApp from "@/components/NavApp.vue";

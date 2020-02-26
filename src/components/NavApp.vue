@@ -58,6 +58,7 @@
 </template>
 <style lang="scss">
 .nav-app {
+  margin: 1rem 0;
   display: flex;
   justify-content: space-between;
   &__button {
