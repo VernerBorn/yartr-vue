@@ -4,6 +4,7 @@
     <main>
       <div class="container">
         <FormSearch />
+        <NavApp />
       </div>
     </main>
   </div>
@@ -13,12 +14,14 @@
 // @ is an alias to /src
 import HeaderApp from "@/components/HeaderApp.vue";
 import FormSearch from "@/components/FormSearch.vue";
+import NavApp from "@/components/NavApp.vue";
 
 export default {
   name: "Home",
   components: {
     HeaderApp,
-    FormSearch
+    FormSearch,
+    NavApp
   }
 };
 </script>
@@ -29,7 +32,7 @@ export default {
   src: url("./assets/fonts/Neuron-DemiBold.woff2") format("woff2"),
     url("./assets/fonts/Neuron-DemiBold.woff") format("woff");
   font-style: normal;
-  font-weight: normal;
+  font-weight: bold;
 }
 
 @font-face {
@@ -37,7 +40,7 @@ export default {
   src: url("./assets/fonts/Neuron.woff2") format("woff2"),
     url("./assets/fonts/Neuron.woff") format("woff");
   font-style: normal;
-  font-weight: bold;
+  font-weight: normal;
 }
 body {
   padding: 0;

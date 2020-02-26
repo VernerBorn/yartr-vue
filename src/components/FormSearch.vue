@@ -18,7 +18,7 @@
 
 <style scoped lang="scss">
 form {
-  margin: 2rem 0;
+  margin: 1rem 0;
   display: flex;
   border: 1px solid #f1f4f8;
   border-radius: 2px;
