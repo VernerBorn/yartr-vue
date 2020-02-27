@@ -1,4 +1,16 @@
 import data from "../../api/data.json";
+function pushRoute(map, state, tranport) {
+  for (let number in state[tranport]) {
+    const { type, direction } = state[tranport][number];
+    const stops = direction.split(" - ");
+    map.push({
+      number,
+      start: stops[0],
+      end: stops[1],
+      type
+    });
+  }
+}
 export default {
   actions: {
     async fetchRoutes({ commit }) {
@@ -21,36 +33,24 @@ export default {
     allRoutes(state) {
       let allRoutes = [];
       for (let tranport in state) {
-        for (let number in state[tranport]) {
-          const stops = state[tranport][number].direction.split(" - ");
-          allRoutes.push({ number, start: stops[0], end: stops[1] });
-        }
+        pushRoute(allRoutes, state, tranport);
       }
       return allRoutes;
     },
     autobusRoutes(state) {
-      let allRoutes = [];
-      for (let number in state.autobus) {
-        const stops = state.autobus[number].direction.split(" - ");
-        allRoutes.push({ number, start: stops[0], end: stops[1] });
-      }
-      return allRoutes;
+      let map = [];
+      pushRoute(map, state, "autobus");
+      return map;
     },
     tramRoutes(state) {
-      let allRoutes = [];
-      for (let number in state.tram) {
-        const stops = state.tram[number].direction.split(" - ");
-        allRoutes.push({ number, start: stops[0], end: stops[1] });
-      }
-      return allRoutes;
+      let map = [];
+      pushRoute(map, state, "tram");
+      return map;
     },
     trolleybusRoutes(state) {
-      let allRoutes = [];
-      for (let number in state.trolleybus) {
-        const stops = state.trolleybus[number].direction.split(" - ");
-        allRoutes.push({ number, start: stops[0], end: stops[1] });
-      }
-      return allRoutes;
+      let map = [];
+      pushRoute(map, state, "trolleybus");
+      return map;
     }
   }
 };

@@ -3,7 +3,9 @@
     <td class="table-routes__col">{{ number }}</td>
     <td class="table-routes__col">
       <ul class="route-stop__list">
-        <li class="route-stop route-stop--start">{{ start }}</li>
+        <li class="route-stop route-stop--start">
+          <span>{{ start }}</span>
+        </li>
         <li class="route-stop route-stop--end">{{ end }}</li>
       </ul>
     </td>
@@ -16,7 +18,8 @@ export default {
   props: {
     number: String,
     start: String,
-    end: String
+    end: String,
+    type: String
   }
 };
 </script>

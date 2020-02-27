@@ -12,6 +12,7 @@
           :number="route.number"
           :start="route.start"
           :end="route.end"
+          :type="route.type"
         />
       </tbody>
     </table>
